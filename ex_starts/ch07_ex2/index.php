@@ -16,8 +16,7 @@
 
         <div id="data">
             <label>Investment Amount:</label>
-            <input type="text" name="investment"
-                   value="<?php echo $investment; ?>"/><br />
+            <input type="text" name="investment" value="<?php echo $investment; ?>"/><br />
 
             <label>Yearly Interest Rate:</label>
             <input type="text" name="interest_rate"
