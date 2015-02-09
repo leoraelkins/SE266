@@ -3,9 +3,9 @@
 $customer_type = $_POST['type'];
 $invoice_subtotal = $_POST['subtotal'];
 
+$customer_type = strtoupper($customer_type);
 switch ($customer_type) {
-	case 'r':
-	case strtoupper('r'):
+	case 'R':
 		if ($invoice_subtotal < 100) {
         	$discount_percent = .0;
 		} else if ($invoice_subtotal >= 100 && $invoice_subtotal < 250) {
@@ -17,11 +17,9 @@ switch ($customer_type) {
 		}
 		break;
 	case 'C':
-	case 'c':
 		$discount_percent = .2;
 		break;
 	case 'T':
-	case 't':
 		if ($invoice_subtotal < 500) {
 			$discount_percent = .4;
 		} else if ($invoice_subtotal >= 500) {
