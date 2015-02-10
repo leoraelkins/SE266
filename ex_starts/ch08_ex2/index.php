@@ -17,8 +17,8 @@ switch ($action) {
         $scores = $_POST['scores'];
 
         // validate the scores
-        // TODO: Convert this if statement to a for loop
-        if (empty($scores[0]) ||
+        // TODO: no idea... Convert this if statement to a for loop
+		if (empty($scores[0]) ||
             empty($scores[1]) ||
             empty($scores[2]) ||
             !is_numeric($scores[0]) ||
@@ -29,10 +29,12 @@ switch ($action) {
         }
 
         // process the scores
-        // TODO: Add code that calculates the score total
+        // DONE: Add code that calculates the score total
+		$score_total = array_sum($scores);
+		
         $scores_string = '';
         foreach ($scores as $s) {
-            $scores_string .= $s . '|';
+            $scores_string .= $s . ' | ';
         }
         $scores_string = substr($scores_string, 0, strlen($scores_string)-1);
 
