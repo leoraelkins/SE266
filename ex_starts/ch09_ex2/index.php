@@ -13,22 +13,37 @@ switch ($action) {
 
         $message = 'Enter some numbers and click on the Submit button.';
         break;
+	
     case 'process_data':
         $number1 = $_POST['number1'];
         $number2 = $_POST['number2'];
         $number3 = $_POST['number3'];
 
         // make sure the user enters three numbers
-
-        // make sure the numbers are valid
-
-        // get the ceiling and floor for $number2
+		if(empty($number1) || empty($number2) || empty($number3)) {
+			$message = "You must enter values for all three numbers.";
+			break;
+		}
+	
+     	// make sure the numbers are valid
+		if(!is_numeric($number1) || !is_numeric($number2) || !is_numeric($number3)) {
+			$message = "You must enter valid numbers.";
+			break;
+		}
+	
+		// get the ceiling and floor for $number2
+		$number2_ceil = ceil($number2);
+		$number2_floor = floor($number2);
 
         // round $number3 to 3 decimal places
+		$number3_rounded = round($number3, 3);
 
         // get the max and min values of all three numbers
+		$min = min($number1, $number2, $number3);
+		$max = max($number1, $number2, $number3);
 
         // generate a random integer between 1 and 100
+		$random = mt_rand(0, 100);
 
         // format the message
         $message =
