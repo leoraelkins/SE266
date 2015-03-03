@@ -1,11 +1,8 @@
 <?php
     // get the data from the form
-    $investment = $_POST ['investment'];
-    $interest_rate = $_POST ['interest_rate'];
-    $years = $_POST ['years'];
-
-	//inserts current date in footer
-	$current_date = date('m/d/Y');
+    $investment = $_POST['investment'];
+    $interest_rate = $_POST['interest_rate'];
+    $years = $_POST['years'];
 
     // validate investment entry
     if ( empty($investment) ) {
@@ -15,7 +12,24 @@
     else if ( $investment <= 0 ) {
         $error_message = 'Investment must be greater than zero.'; }
 
-   
+    // validate interest rate entry
+    else if ( empty($interest_rate) ) {
+        $error_message = 'Interest rate is a required field.'; }
+    else if ( !is_numeric($interest_rate) )  {
+        $error_message = 'Interest rate must be a valid number.'; }
+    else if ( $interest_rate <= 0 || $interest_rate > 15) {
+        $error_message = 'Interest rate must be greater than zero and less than or equal to 15.'; }
+
+//validates number of years to be greater than 0 and less than or equal to 50
+	else if (empty($years)) {
+		$error_message = 'Number of years is a required field';
+	}
+	else if (!is_numeric($years)) {
+		$error_message = 'Number of years must be a valid number';
+	}
+	else if ($years <= 0 || $years > 50) {
+		$error_message = 'Number of years must be greater than zero and less than or equal to 50';
+	}
 
     // set error message to empty string if no invalid entries
     else {
@@ -36,6 +50,10 @@
     $investment_f = '$'.number_format($investment, 2);
     $yearly_rate_f = $interest_rate.'%';
     $future_value_f = '$'.number_format($future_value, 2);
+
+//format todays date
+$date = date('F d, Y');
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -60,9 +78,12 @@
         <label>Future Value:</label>
         <span><?php echo $future_value_f; ?></span><br />
     </div>
+
+<!-- insert today's date at bottom -->
+	<p>
+		This calculation was done on <?php echo $date; ?>
+	</p>
+
 	
-	<footer>
-		This calculation was done on <?php echo $current_date; ?>.
-	</footer>
 </body>
 </html>
