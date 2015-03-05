@@ -40,9 +40,12 @@
 
                 <label>&nbsp;</label>
                 <input type="submit" value="Add Item"/>
+				
             </form>
             <p><a href=".?action=show_cart">View Cart</a></p>
     
+			<p>Session ID: <?php echo $id; ?> </p>
+
         </div><!-- end main -->
     </div><!-- end page -->
 </body>

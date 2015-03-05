@@ -28,6 +28,8 @@
                 <?php foreach( $_SESSION['cart12'] as $key => $item ) :
                     $cost  = number_format($item['cost'],  2);
                     $total = number_format($item['total'], 2);
+
+				
                 ?>
                     <tr>
                         <td>
@@ -59,10 +61,13 @@
                 <p>Click "Update Cart" to update quantities in your
                     cart. Enter a quantity of 0 to remove an item.
                 </p>
-                </form>
+				</form>
             <?php endif; ?>
             <p><a href=".?action=show_add_item">Add Item</a></p>
             <p><a href=".?action=empty_cart">Empty Cart</a></p>
+			<p><a href=".?action=end_session">End Session and Delete Cookie</a></p>
+	
+			<p>Session ID: <?php echo $id; ?> </p>
 
         </div><!-- end main -->
     </div><!-- end page -->
