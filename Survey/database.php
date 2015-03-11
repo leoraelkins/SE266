@@ -3,11 +3,13 @@
     $username = 'root';
     $password = '';
 
-    try {
-        $db = new PDO($dsn, $username, $password);
+$db = new PDO($dsn, $username, $password);
+
+/*     try {
+        
     } catch (PDOException $e) {
         $error_message = $e->getMessage();
         include('database_error.php');
         exit();
-    }
+    } */
 ?>
