@@ -1,0 +1,25 @@
+#page {
+    width: 850px;
+	padding: 10px;
+ 	background-color: white;
+}
+#header {
+    padding: 10px;
+}
+#main {
+ 	padding: 10px;
+}
+body {
+    background-color: black;
+    font-family: Century Gothic;
+}
+h1 {
+	text-align: center;
+    color: maroon;
+}
+h2 {
+	color: black;
+}
+h3 {
+	color: darkblue;
+}

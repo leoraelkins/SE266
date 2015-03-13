@@ -1,15 +1,15 @@
 <?php
-    $dsn = 'mysql:host=localhost;dbname=survey';
+//connects to the databse
+	$dsn = 'mysql:host=localhost;dbname=survey';
     $username = 'root';
     $password = '';
 
-$db = new PDO($dsn, $username, $password);
-
-/*     try {
-        
+    try {
+        $db = new PDO($dsn, $username, $password);
     } catch (PDOException $e) {
-        $error_message = $e->getMessage();
-        include('database_error.php');
-        exit();
-    } */
+      	$error = $e->getMessage();
+		include ('display.php');
+		echo "<p> $error </p>";
+	    exit();
+    }
 ?>
