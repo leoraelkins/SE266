@@ -50,7 +50,7 @@ switch( $_POST['action'] ) {
     case 'Promote Task':
 		$task_index = $_POST['taskid'];
 		if ($task_index == 0) {
-			$errors[] = 'You cannot promote the forst task';
+			$errors[] = 'You cannot promote the first task';
         } else {
             $task_value = $task_list[$task_index];
 			$task_value_before = $task_list[$task_index-1];

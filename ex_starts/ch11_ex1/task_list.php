@@ -9,7 +9,7 @@
     <div id="page">
     <div id="header">
         <h1>Task List Manager</h1>
-    </div>
+    </div> <!-- end header div-->
     <div id="main">
 
     <!-- part 1: the errors -->

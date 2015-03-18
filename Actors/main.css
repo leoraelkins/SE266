@@ -1,0 +1,46 @@
+#page {
+	width: 760px;
+   	background-color: white;
+	padding: 25px;
+   	border: 1px solid rgb(119, 75, 77);
+}
+table {
+ 	border: 1px solid black;
+   	border-collapse: collapse;
+}
+td, th {
+   	border: 1px dashed black;
+	padding: 5px 5px 7px 7px;
+   	vertical-align: top;
+   	text-align: left;
+}
+th {
+	background-color: black;
+	color: white;
+}
+body {
+	font-family: Century Gothic;
+	background-color:lightblue;
+}
+h1 {
+	text-align: center;
+    color: darkolivegreen;
+}
+h2 {
+	text-align: center;
+	color: black;
+}
+h3 {
+	color: darkblue;
+}
+#match {
+	background-color: green;
+}
+label {
+    margin-right: 20px;
+    text-align: left;
+}
+#errors {
+    color: darkred;
+	font-size: 15px;
+}
